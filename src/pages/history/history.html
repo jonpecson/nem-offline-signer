@@ -1,0 +1,90 @@
+<!-- <ion-header>
+
+	<ion-toolbar no-padding>
+		<ion-segment [(ngModel)]="status">
+			<ion-segment-button value="pending">
+				{{ 'PENDING' | translate}}
+			</ion-segment-button>
+			<ion-segment-button value="uploaded">
+				{{ 'UPLOADED' | translate}}
+			</ion-segment-button>
+		</ion-segment>
+	</ion-toolbar>
+</ion-header> -->
+
+<ion-content padding-top>
+
+
+
+
+
+	<div [ngSwitch]="status">
+		<div *ngSwitchCase="'pending'">
+
+			<ion-grid class="empty" *ngIf="histories.length == 0">
+				<ion-row align-items-center>
+					<ion-col align-self-center text-center>
+						<ion-icon name="list-box" color="secondary"></ion-icon>
+						<h4 margin-bottom>{{ 'EMPTY_PENDING_TRANSACTION' | translate}}</h4>
+						<button color="secondary" ion-button outline tappable (click)="goHome()">{{ 'START_SCANING' | translate}}</button>
+					</ion-col>
+				</ion-row>
+			</ion-grid>
+
+
+			<ion-list>
+					<ion-card *ngFor="let x of histories">
+						<ion-item>
+							<h2><span class="price">To</span>:{{x?.name}}</h2>
+							<p ><ion-badge style="font-size: 1rem;">{{x?.addr}}</ion-badge></p>
+						</ion-item>
+						<ion-card-content>
+							<p>
+								<span class="price">Amount</span>:<ion-badge item-end>{{x?.amount}} XEM</ion-badge> </p>
+							<p>
+								<span class="price">Message</span>: {{x?.msg}}
+							</p>
+						</ion-card-content>
+					</ion-card>
+
+
+				</ion-list>
+
+
+			<!-- <ion-item-sliding *ngFor="let x of histories">
+				<ion-item>
+					<ion-thumbnail item-start>
+						<div class="img" [ngStyle]="{'background-image': 'url(' + img +')'}"></div>
+					</ion-thumbnail>
+					<h3 [innerHTML]="x.address"></h3>
+					<p>
+						<span class="price">AMOUNT: {{x.amount}}</span>
+					</p>
+
+					<p>
+						<span class="price">FEE: {{x.fee}}</span>
+					</p>
+
+					<p>
+						<span class="price">Timestamp: {{x.timestamp | date:'mm/dd/yyyy hh:mm:ss a'}}</span>
+					</p>
+
+				</ion-item>
+			</ion-item-sliding> -->
+
+		</div>
+
+	</div>
+</ion-content>
+
+<ion-footer *ngIf="histories.length > 0">
+	<ion-toolbar padding-horizontal>
+		<ion-row align-items-center no-padding>
+			<ion-col class="total" align-self-center no-padding>
+				<span>Total ({{histories?.length}} item(s))</span>
+				<h5>{{total}} XEM</h5>
+			</ion-col>
+
+		</ion-row>
+	</ion-toolbar>
+</ion-footer>

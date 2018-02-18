@@ -1,0 +1,17 @@
+.ios,
+.md {
+    page-loader {
+        ion-content {
+            background: url('../assets/img/background/splash.png');
+            background-size: cover;
+            background-position: center;
+
+            .scroll-content {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+}
+

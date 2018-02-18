@@ -1,0 +1,55 @@
+<!--
+  Generated template for the InvoicePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Invoice</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+
+      <!-- <button ion-button large block color="secondary" (click)="scan()">SCAN INVOICE</button> -->
+
+      <ion-item>
+            <ion-label floating>Name</ion-label>
+            <ion-input type="text" [value]="name" (input)=validateName($event.target.value)></ion-input>
+        </ion-item>
+
+      <ion-item>
+          <ion-label floating>NEM Addresss</ion-label>
+          <ion-input type="text" [value]="nemAddress" (input)=validateAddress($event.target.value)></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label floating>Amount</ion-label>
+          <ion-input type="number" [value]="nemAmount" default="0" (input)=updateAmount($event.target.value)></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label floating>Private Key</ion-label>
+          <ion-input type="password" [value]="nemPrivatekey" id="prvKey" (input)=updatePrvKey($event.target.value)></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label floating>Message</ion-label>
+          <ion-input type="text" [value]="nemMessage" (input)=updateMessage($event.target.value)></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-badge large item-right color="secondary">FEE: {{nemFee}} XEM</ion-badge>
+      </ion-item>
+
+
+      <button ion-button large block color="secondary" [disabled]="!(addressvalid && amountValid && nameValid)" (click)="openModal()">SIGN TRANSACTION</button>
+
+      <!-- <button ion-button large block color="secondary" (click)="decrypt()">SCAN INVOICE</button> -->
+  </ion-list>
+</ion-content>

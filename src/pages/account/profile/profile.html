@@ -1,0 +1,45 @@
+<ion-header no-border no-lines>
+  <ion-navbar>
+      <ion-buttons start>
+        <button color="primary" start icon-only ion-button (click)="dismiss()">
+          <ion-icon name="close"></ion-icon>
+        </button>
+      </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="form" (ngSubmit)="submit()" novalidate>
+    <ion-list>
+      <h1 margin-left margin-bottom>{{ 'EDIT_PROFILE' | translate}}</h1>
+      <ion-item>
+          <ion-label>Select Network</ion-label>
+          <ion-select formControlName="network">
+            <ion-option value="main">Mainnet</ion-option>
+            <ion-option value="testnet">Testnet</ion-option>
+            <ion-option value="mijin">Mijin</ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item padding-right>
+          <ion-label floating>{{ 'WALLET_NAME' | translate }}</ion-label>
+          <ion-input formControlName="name" autocomplete="off" type="text" required></ion-input>
+        </ion-item>
+
+        <ion-item padding-right>
+          <ion-label floating>{{ 'PRIVATE_KEY' | translate }}</ion-label>
+          <ion-input formControlName="privateKey" autocomplete="off" type="password" required></ion-input>
+        </ion-item>
+
+
+      <div padding>
+        <button ion-button block [disabled]="!form.valid">{{ 'SAVE' | translate}}</button>
+      </div>
+
+
+
+    </ion-list>
+
+
+  </form>
+</ion-content>
