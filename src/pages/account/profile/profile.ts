@@ -34,7 +34,7 @@ export class AccountProfilePage {
     public navParams: NavParams
   ) {
     this.form = this.fb.group({
-      network: ["", Validators.required],
+      // network: ["", Validators.required],
       name: ["", Validators.required],
       privateKey: ["", Validators.required]
     });
@@ -46,7 +46,7 @@ export class AccountProfilePage {
         if (res) {
           console.log("Account user", res);
           this.wallet = JSON.parse(res.toString());
-          this.form.controls["network"].setValue(this.wallet.network);
+          // this.form.controls["network"].setValue(this.wallet.network);
           this.form.controls["name"].setValue(this.wallet.name);
           this.form.controls["privateKey"].setValue(this.wallet.privateKey);
         }
@@ -60,7 +60,7 @@ export class AccountProfilePage {
     this.loader.present();
 
     // Get form value
-    this.wallet.network = this.form.value.network;
+    // this.wallet.network = this.form.value.network;
     this.wallet.name = this.form.value.name;
     this.wallet.privateKey = this.form.value.privateKey;
 

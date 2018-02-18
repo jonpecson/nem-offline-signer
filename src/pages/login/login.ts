@@ -26,7 +26,7 @@ import CryptoJS from "crypto-js";
 export class LoginPage {
   @ViewChild("slider") slider: Slides;
   @ViewChild("innerSlider") innerSlider: Slides;
-  selectedNetwork: any;
+  // selectedNetwork: any;
 
   public loginForm: FormGroup;
   public signupForm: FormGroup;
@@ -52,7 +52,7 @@ export class LoginPage {
     });
 
     this.signupForm = this.fb.group({
-      network: ["", Validators.required],
+      // network: ["", Validators.required],
       name: ["", Validators.required],
       privateKey: ["", Validators.required],
       pass: ["", Validators.required],
