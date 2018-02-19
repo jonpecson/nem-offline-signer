@@ -19,8 +19,8 @@ export class TabsPage {
 
 
   constructor(public user: UserProvider, public wish: WishlistProvider, public cart: CartProvider, public modal: ModalController, public navParams: NavParams) {
-    // this.mySelectedIndex = this.navParams.data.tabIndex || this.mySelectedIndex;
-    this.mySelectedIndex = this.mySelectedIndex;
+    this.mySelectedIndex = this.navParams.data.tabIndex || this.mySelectedIndex;
+    // this.mySelectedIndex = this.mySelectedIndex;
   }
 
   isLogin(page, id){
