@@ -40,7 +40,7 @@ export const MODULES = [
   IonicImageViewerModule,
   // database name for cart, wish, checkout, etc
   IonicStorageModule.forRoot({
-    name: '_ionstore',
+    name: '_nemsigner',
        driverOrder: ['indexeddb', 'sqlite', 'websql']
   }),
   TranslateModule.forRoot({

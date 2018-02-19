@@ -1,6 +1,6 @@
 {
   "name": "nem-signer",
-  "app_id": "",
+  "app_id": "76e9ff92",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}

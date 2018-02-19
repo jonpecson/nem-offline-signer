@@ -1,5 +1,5 @@
 export const AppGlobal: any = {
-  store           : 'NEM TX Signer',  // change this with your app name
+  store           : 'NEM Offline Signer',  // change this with your app name
   ContactEmail    : 'support@nem.help', // change this with your email contact
   url             : 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx', // change this with your URL (please use https, recommended)
   OneSignalAppID  : 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx', // change this with your onesignal api key
