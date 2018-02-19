@@ -11,6 +11,7 @@ import {
 } from "ionic-angular";
 import { ModalContentPage } from "./modal";
 import { BarcodeScanner } from "@ionic-native/barcode-scanner";
+import { ToastProvider } from '../../providers/providers';
 
 @IonicPage()
 @Component({
@@ -31,6 +32,7 @@ export class InvoicePage {
   invoice: any;
 
   constructor(
+    private toast: ToastProvider,
     public navCtrl: NavController,
     private nemService: NemProvider,
     private modalCtrl: ModalController,
@@ -151,6 +153,9 @@ export class InvoicePage {
 
     // Save to transaction history
     this.saveTransaction();
+
+    // Show a confirmation message
+    this.toast.show('New transaction been has signed.')
 
     this.modalCtrl.create(ModalContentPage, { qrData: res.message }).present();
   }
